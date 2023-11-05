@@ -18,5 +18,50 @@ public class Solution {
     }
 }
 
+
+//Question 2
+import java.lang.reflect.Array;
+
+public class Solution {
+    public static int[] getSecondOrderElements(int n, int []a) {
+        
+        int max=0;
+        int smax=0;
+        int min=0;
+        int smin=0;
+
+        if(a[0]>a[1]){
+            max=a[0];
+            smax=a[1];
+            min=a[1];
+            smin=a[0];
+        }
+        else{
+            max=a[1];
+            smax=a[0];
+            min=a[0];
+            smin=a[1];
+        }
+        for(int i=2;i<n;i++){
+            if(max<a[i]){
+                smax=max;
+                max=a[i];
+            }
+            else if(smax<a[i]){
+                smax=a[i];
+            }
+            if(min>a[i]){
+                smin=min;
+                min=a[i];
+            }
+            else if(smin>a[i]){
+                smin=a[i];            
+                }
+        }
+        int[]arr={smax,smin};
+        return arr;
+    }
+}
+
 Question 2
 
