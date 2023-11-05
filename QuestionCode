@@ -63,5 +63,25 @@ public class Solution {
     }
 }
 
-Question 2
+\\Question 3 https://www.codingninjas.com/studio/problems/largest-element-in-the-array-largest-element-in-the-array_5026279?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
+
+public class Solution {
+    public static int isSorted(int n, int []a) {
+        // Write your code here.
+      for(int i=0;i<n-1;i++){
+
+            int j=i+1;
+
+            if(a[i]>a[j]){
+
+                return 0;
+
+            }
+
+        }{
+          return 1;
+        }
+    }
+}
+
 
