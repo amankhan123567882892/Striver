@@ -4,7 +4,6 @@ import java.io.*;
 public class Solution {
 
     static int largestElement(int[] arr, int n) {
-        // Write your code here.
         int max=0;
         for(int i=0;i<n;i++)
         {
@@ -67,7 +66,6 @@ public class Solution {
 
 public class Solution {
     public static int isSorted(int n, int []a) {
-        // Write your code here.
       for(int i=0;i<n-1;i++){
 
             int j=i+1;
@@ -84,4 +82,132 @@ public class Solution {
     }
 }
 
+\\question 4 Remove Duplicates from Sorted Array
 
+import java.util.ArrayList;
+
+import java.util.HashSet;
+
+ 
+
+public class Solution {
+
+    public static int removeDuplicates(ArrayList<Integer> arr,int n) {
+
+        HashSet<Integer>set=new HashSet<>();
+
+        for(Integer v: arr){
+
+            set.add(v);
+
+        }
+
+        return set.size();
+
+    }
+
+
+\\question 5 Left Rotate an Array by One
+import java.util.* ;
+import java.io.*; 
+
+
+public class Solution {
+
+    static int[] rotateArray(int[] arr, int n) {
+     int temp=arr[0];
+     for(int i=1;i<n;i++){
+         arr[i-1]=arr[i];
+     }
+     arr[n-1]=temp;
+     return arr;
+
+    }
+}
+
+\\question 6 Move Zero's to End
+
+public class Solution {
+        public static int[] moveZeros(int n, int []a) {
+     int m=0;
+            for(int i=0;i<n;i++){
+                if(a[i]!=0){
+                    a[m]=a[i];
+                    m++;
+                }
+            }
+            for(int i=m;i<n;i++){
+                a[i]=0;
+            }
+            return a;      
+
+    }
+
+}
+
+\question 7 Linear Search
+import java.util.*;
+public class Solution {
+    public static int linearSearch(int n, int num, int []arr)
+        int key=4;
+        
+        for (int i=0;i<n;i++)
+       if(arr[i]==num){
+          return i;
+        }
+        
+        {
+         
+            return -1;
+        }
+    }
+}
+
+\\question 8 Merge two sortedd array
+
+import java.lang.reflect.Array;
+import java.util.*;
+public class Solution {
+    public static List< Integer > sortedArray(int []a, int []b) {
+        HashSet<Integer> hs = new HashSet<>();
+        for(int i =0;i<a.length;i++){
+            hs.add(a[i]);
+        }
+        for(int i=0;i<b.length;i++){
+            hs.add(b[i]);
+        }
+         List<Integer> arr =new ArrayList<>(hs);
+    
+        Collections.sort(arr);
+        return arr;
+    }}
+
+\question 9 Longest Subarray With Sum K
+
+public class Solution {
+    public static int longestSubarrayWithSumK(int []a, long k) {
+        int i =0;
+        int length =0;
+        int maxlength =-1;
+        int sum = 0;
+        int j = 0;
+        while(i<a.length){
+             if(sum < k){
+                 sum = sum + a[i];
+                 i++;
+                 length++;
+             }else if( sum > k){
+                 sum = sum - a[j];
+                 j++;
+                 length--;
+             }else{
+                 
+                 maxlength = Math.max(length , maxlength);
+                 sum = sum + a[i];
+                 i++;
+                 length++;
+             }
+        }
+        return maxlength;
+    }
+}
